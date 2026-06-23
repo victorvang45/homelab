@@ -43,9 +43,13 @@ The purpose of this lab is to practice Active Directory Basics
   DHCP assigned IP address
 - Verified domain join was successful
 
-## Screenshots
-
 ## Issues & Troubleshooting
+
+**Potential issue to note:** Ensured client VM DNS 
+was pointing to the Domain Controller IP address 
+rather than router IP before joining the domain. 
+This is a common misconfiguration that prevents 
+domain joins from succeeding.
 
 ## What I Learned
 
