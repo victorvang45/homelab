@@ -94,6 +94,17 @@ rather than router IP before joining the domain.
 This is a common misconfiguration that prevents 
 domain joins from succeeding.
 
+- **OU deletion fails** — caused by accidental 
+  deletion protection being enabled. Fix: go to 
+  View → Advanced Features in AD Users and 
+  Computers, then uncheck the protection box in 
+  the OU properties
+
+- **Delegation not applying correctly** — verify 
+  the correct OU was selected during the Delegation 
+  of Control wizard and that the user account is 
+  in the right group
+
 ## What I Learned
 - DHCP and Active Directory work together — the DC 
   hands out IP addresses to client machines while 
