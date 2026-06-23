@@ -88,11 +88,11 @@ The purpose of this lab is to practice Active Directory Basics
 
 ## Issues & Troubleshooting
 
-**Potential issue to note:** Ensured client VM DNS 
-was pointing to the Domain Controller IP address 
-rather than router IP before joining the domain. 
-This is a common misconfiguration that prevents 
-domain joins from succeeding.
+- **Potential issue to note:** Ensured client VM DNS 
+  was pointing to the Domain Controller IP address 
+  rather than router IP before joining the domain. 
+  This is a common misconfiguration that prevents 
+  domain joins from succeeding.
 
 - **OU deletion fails** — caused by accidental 
   deletion protection being enabled. Fix: go to 
