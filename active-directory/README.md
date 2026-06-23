@@ -23,7 +23,7 @@ The purpose of this lab is to practice Active Directory Basics
 
 ### 3. Created Organizational Unit
 - Opened Active Directory Users and Computers
-- Created OU named Users
+- Created OU named Admins
 - Used to organize and separate user accounts
 
 ### 4. Created Admin User
@@ -34,7 +34,7 @@ The purpose of this lab is to practice Active Directory Basics
 
 ### 5. Created Standard User Account
 - Created a regular user account for testing
-- Placed inside the OU created in step 3
+- Placed inside the OU named Users
 
 ### 6. Verified Network Connectivity
 - Logged into client Windows 11 VM with 
