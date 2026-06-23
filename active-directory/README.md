@@ -111,3 +111,17 @@ domain joins from succeeding.
 - Joining a client machine to the domain and logging 
   in with a domain user account confirmed the whole 
   environment was communicating correctly
+
+- OUs have an accidental deletion protection setting 
+  that must be manually disabled before the OU can 
+  be removed — an important safeguard in real 
+  environments where mistakes are costly
+
+- Delegation of Control allows specific users to 
+  perform limited admin tasks like password resets 
+  without being granted full Domain Admin privileges 
+
+- Disabling a user account rather than deleting it 
+  is best practice when an employee leaves — the 
+  account and its history are preserved in case 
+  they're needed later
