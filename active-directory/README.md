@@ -26,8 +26,7 @@ The purpose of this lab is to practice Active Directory Basics
 - Created OU named Admins
 - Used to organize and separate user accounts
 
-![Organizational Unit admins created]
-(assets/organizational-unit-create-admins.png)
+![Organizational Unit admins created](assets/organizational-unit-create-admins.png)
 
 ### 4. Created Admin User
 - Created dedicated admin account inside AD
@@ -35,15 +34,13 @@ The purpose of this lab is to practice Active Directory Basics
 - Used for day to day management instead of 
   default Administrator account
 
-![Admin user accounts created]
-(assets/create-admin-user.png)
+![Admin user accounts created](assets/create-admin-user.png)
 
 ### 5. Created Standard User Account
 - Created a regular user account for testing
 - Placed inside the OU named Users
-
-![Standard user accounts created]
-(assets/create-non-admin-user.png)
+  
+![Standard user accounts created](assets/create-non-admin-user.png)
 
 ### 6. Verified Network Connectivity
 - Logged into client Windows 11 VM with 
@@ -52,11 +49,9 @@ The purpose of this lab is to practice Active Directory Basics
   DHCP assigned IP address
 - Verified domain join was successful
 
-![Verify client1 is connected to domain on domain controller]
-(assets/check-connection-on-dc.png)
+![Verify client1 is connected to domain on domain controller](assets/check-connection-on-dc.png)
 
-![Verify client1 is connected to the internet via domain controller]
-(assets/testing-connection-client1.png)
+![Verify client1 is connected to the internet via domain controller](assets/testing-connection-client1.png)
 
 ## Issues & Troubleshooting
 
