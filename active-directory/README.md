@@ -72,7 +72,7 @@ The purpose of this lab is to practice Active Directory Basics
 
 ![Delegation of Control wizard](assets/delegation-control.png)
 
-*Giving Philip persmission to reset passwords and force password reset next ogin
+*Giving Philip persmission to reset passwords and force password reset next login*
 
 ### 8. Configured OU Deletion Protection
 - Enabled accidental deletion protection on OUs
@@ -83,6 +83,8 @@ The purpose of this lab is to practice Active Directory Basics
   accidental removal of critical directory objects
 
 ![OU protection settings](assets/ou-deletion-protection.png)
+
+*Showing that IT is protected from deletion. To delete, we would have to uncheck that box*
 
 ## Issues & Troubleshooting
 
