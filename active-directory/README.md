@@ -61,7 +61,7 @@ The purpose of this lab is to practice Active Directory Basics
 
 ![Verify client1 is connected to the internet via domain controller](assets/testing-connection-client1.png)
 
-*Verify client1 is connected to the internet via domain controller*
+*Verify client1 is connected to the domain controller and internet*
 
 ## Issues & Troubleshooting
 
