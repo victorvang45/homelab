@@ -8,6 +8,41 @@ The purpose of this lab is to practice Active Directory Basics
 
 ## Steps
 
+### 1. Installed Active Directory Domain Services
+- Opened Server Manager on Windows Server 2022
+- Added the Active Directory Domain Services role
+- Promoted server to Domain Controller
+- Created domain: mydomain.com
+- Restarted server to complete promotion
+
+### 2. Configured DHCP Server
+- Installed DHCP Server role through Server Manager
+- Created a new DHCP scope
+- Defined IP address range for client machines
+- Authorized the DHCP server in Active Directory
+
+### 3. Created Organizational Unit
+- Opened Active Directory Users and Computers
+- Created OU named Users
+- Used to organize and separate user accounts
+
+### 4. Created Admin User
+- Created dedicated admin account inside AD
+- Assigned to Domain Admins group
+- Used for day to day management instead of 
+  default Administrator account
+
+### 5. Created Standard User Account
+- Created a regular user account for testing
+- Placed inside the OU created in step 3
+
+### 6. Verified Network Connectivity
+- Logged into client Windows 11 VM with 
+  standard user account
+- Confirmed internet access working through 
+  DHCP assigned IP address
+- Verified domain join was successful
+
 ## Screenshots
 
 ## Issues & Troubleshooting
