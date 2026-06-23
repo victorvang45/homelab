@@ -63,6 +63,27 @@ The purpose of this lab is to practice Active Directory Basics
 
 *Verify client1 is connected to the domain controller and internet*
 
+### 7. Delegated Password Reset Permissions
+- Selected a standard user to act as helpdesk staff
+- Delegated permission to reset passwords and 
+  force password change at next login
+- Verified delegated user could reset passwords 
+  without full admin access
+
+![Delegation of Control wizard](assets/delegation-control.png)
+
+*Giving Philip persmission to reset passwords and force password reset next ogin
+
+### 8. Configured OU Deletion Protection
+- Enabled accidental deletion protection on OUs
+  during creation
+- Practiced disabling protection in order to 
+  delete an OU
+- Noted this is a best practice to prevent 
+  accidental removal of critical directory objects
+
+![OU protection settings](assets/ou-deletion-protection.png)
+
 ## Issues & Troubleshooting
 
 **Potential issue to note:** Ensured client VM DNS 
