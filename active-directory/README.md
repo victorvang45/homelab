@@ -116,18 +116,15 @@ The purpose of this lab is to practice Active Directory Basics.
   client machine
 
 
-![Control Panel restriction policy enabled]
-(assets/restrict-control-panel.png)
+![Control Panel restriction policy enabled](assets/restrict-control-panel.png)
 
 *Prohibit access to Control Panel policy enabled*
 
-![Auto lock screen policy configured]
-(assets/auto-lock-screen-gpo.png)
+![Auto lock screen policy configured](assets/auto-lock-screen-gpo.png)
 
 *Machine inactivity limit set to 300 seconds*
 
-![Policies verified on client VM]
-(assets/applyo-auto-lock-screen.png)
+![Policies verified on client VM](assets/applyo-auto-lock-screen.png)
 
 ## Issues & Troubleshooting
 
