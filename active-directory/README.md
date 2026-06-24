@@ -128,6 +128,8 @@ The purpose of this lab is to practice Active Directory Basics.
 
 ![Policies verified on client VM](assets/apply-auto-lock-screen.png)
 
+*GPOS applied to users*
+
 ## Issues & Troubleshooting
 
 **No critical issues encountered during initial setup.**
