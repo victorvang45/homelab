@@ -85,7 +85,7 @@ The purpose of this lab is to set up and configure Active Directory Domain Servi
 
 ![OU protection settings](assets/ou-deletion-protection.png)
 
-*Showing that IT is protected from deletion. To delete, we would have to uncheck that box*
+*IT OU protected from accidental deletion — protection must be disabled before deletion is allowed*
 
 ### 9. Configured Group Policy Objects (GPOs)
 - Opened Group Policy Management Console (GPMC)
@@ -128,7 +128,7 @@ The purpose of this lab is to set up and configure Active Directory Domain Servi
 
 ![Policies verified on client VM](assets/apply-auto-lock-screen.png)
 
-*GPOS applied to users*
+*GPOs applied to users*
 
 ## Issues & Troubleshooting
 
@@ -149,6 +149,11 @@ of in this environment:
   in the right group
 
 ## What I Learned
+
+- A domain controller requires a static IP so client 
+  machines and DNS always know where to find it — 
+  a changing IP breaks domain connectivity entirely
+  
 - DHCP and Active Directory work together — the DC 
   hands out IP addresses to client machines while 
   simultaneously managing their user accounts and 
