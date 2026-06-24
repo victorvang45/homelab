@@ -1,6 +1,6 @@
 # Active Directory
 ## Objective
-The purpose of this lab is to practice Active Directory Basics.
+The purpose of this lab is to set up and configure Active Directory Domain Services, practice user and group management, delegate permissions, and enforce Group Policy in a virtualized environment.
 
 ## Environment
 - VirtualBox
@@ -73,7 +73,7 @@ The purpose of this lab is to practice Active Directory Basics.
 
 ![Delegation of Control wizard](assets/delegation-control.png)
 
-*Giving Philip persmission to reset passwords and force password reset next login*
+*Giving Philip permission to reset passwords and force password reset next login*
 
 ### 8. Configured OU Deletion Protection
 - Enabled accidental deletion protection on OUs
@@ -180,7 +180,7 @@ of in this environment:
   account and its history are preserved in case 
   they're needed later
 
-  - Group Policy Objects allow admins to enforce 
+- Group Policy Objects allow admins to enforce 
   settings across all machines in an OU without 
   touching each computer individually
 
