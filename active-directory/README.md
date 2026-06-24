@@ -87,6 +87,48 @@ The purpose of this lab is to practice Active Directory Basics.
 
 *Showing that IT is protected from deletion. To delete, we would have to uncheck that box*
 
+### 9. Configured Group Policy Objects (GPOs)
+- Opened Group Policy Management Console (GPMC)
+- Created a new GPO and linked it to the Employees OU
+
+**Policy 1: Restrict Access to Control Panel and PC Settings**
+- Navigated to User Configuration → Policies → 
+  Administrative Templates → Control Panel
+- Enabled "Prohibit access to Control Panel and 
+  PC Settings"
+- Prevents standard users from modifying system 
+  settings — common in corporate environments to 
+  maintain system integrity
+
+**Policy 2: Auto Lock Screen After Idle**
+- Navigated to Computer Configuration → Policies → 
+  Windows Settings → Security Settings → 
+  Local Policies → Security Options
+- Set interactive logon machine inactivity limit 
+  to 300 seconds (5 minutes)
+- Ensures unattended machines are automatically 
+  locked — a basic security requirement in most 
+  organizations
+
+- Ran gpupdate /force on client VM to apply 
+  policies immediately
+- Verified both policies applied correctly on 
+  client machine
+
+
+![Control Panel restriction policy enabled]
+(assets/restrict-control-panel.png)
+
+*Prohibit access to Control Panel policy enabled*
+
+![Auto lock screen policy configured]
+(assets/auto-lock-screen-gpo.png)
+
+*Machine inactivity limit set to 300 seconds*
+
+![Policies verified on client VM]
+(assets/applyo-auto-lock-screen.png)
+
 ## Issues & Troubleshooting
 
 **No critical issues encountered during initial setup.**
@@ -136,3 +178,26 @@ of in this environment:
   is best practice when an employee leaves — the 
   account and its history are preserved in case 
   they're needed later
+
+  - Group Policy Objects allow admins to enforce 
+  settings across all machines in an OU without 
+  touching each computer individually
+
+- Restricting Control Panel access is a common 
+  corporate security practice that prevents standard 
+  users from changing network settings, uninstalling 
+  software, or modifying system configurations
+
+- Auto lock policies are a basic security standard 
+  — an unattended unlocked machine is a security 
+  risk in any office environment
+
+- GPO settings are split between User Configuration 
+  and Computer Configuration — User Configuration 
+  applies to the user regardless of which machine 
+  they log into, Computer Configuration applies to 
+  the machine regardless of who logs in
+
+- Running gpupdate /force immediately applies 
+  pending policies without waiting for the automatic 
+  90 minute refresh cycle
