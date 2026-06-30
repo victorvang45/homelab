@@ -33,6 +33,9 @@ The purpose of this lab is to practice core networking concepts using VirtualBox
 
 ![VirtualBox network adapter set to Bridged mode](assets/bridged-adapter.png)
 
+
+![ipconfig and ping results in Bridged mode](assets/bridged-pinged.png)
+
 *Adapter 1 set to Bridged — VM connects directly through the host's physical network adapter and receives an IP on the real home network*
 
 ### 3. Tested Internal Network Mode
