@@ -5,6 +5,7 @@ and systems administration skills.
 
 ## Labs
 - [Active Directory](active-directory/README.md)
+- [Networking Fundamentals](networking/README.md)
 
 ## Environment
 - VirtualBox
