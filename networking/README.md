@@ -29,15 +29,15 @@ The purpose of this lab is to practice core networking concepts using VirtualBox
 - Changed Client 1 Adapter 1 to **Bridged Adapter**, attached to the host's physical network adapter
 - Booted the VM and ran `ipconfig` — confirmed the VM received an IP on the actual home network instead of the NAT range
 - Ran `ping 8.8.8.8` to confirm internet access
-- Attempted to ping the host machine's IP address from the client VM
+- Attempted to ping the host machine's IP address from the client VM — initially failed due to Windows Firewall blocking ICMP, resolved after enabling the appropriate inbound rule (see Issues & Troubleshooting)
 
 ![VirtualBox network adapter set to Bridged mode](assets/bridged-adapter.png)
+
 *Adapter 1 set to Bridged — VM connects directly through the host's physical network adapter and receives an IP on the real home network*
 
 ![ipconfig and ping results in Bridged mode](assets/bridged-ping.png)
-*Bridged mode confirmed working — IPv4 address from Host Machine, successful ping to 8.8.8.8 and host machine with 0% packet loss*
 
-
+*Bridged mode confirmed working after resolving firewall issue — IPv4 address from Host Machine, successful ping to 8.8.8.8 and host machine with 0% packet loss*
 
 ### 3. Tested Internal Network Mode
 - Changed Client 1 Adapter 1 from Host-Only to **Internal Network** to match the Domain Controller's internal adapter
