@@ -21,7 +21,7 @@ The purpose of this lab is to practice core networking concepts using VirtualBox
 
 *Adapter 1 set to NAT — VM can access the internet through the host machine but is isolated from the local network*
 
-![ipconfig and ping results in NAT mode](assets/ping-8_8_8_8.png)
+![ipconfig and ping results in NAT mode](assets/nat-ping.png)
 
 *NAT mode confirmed working — IPv4 address 10.0.2.15 assigned by VirtualBox, successful ping to 8.8.8.8 and google.com with 0% packet loss*
 
@@ -41,11 +41,11 @@ The purpose of this lab is to practice core networking concepts using VirtualBox
 - Ran `ipconfig` on the DC to retrieve its Internal Network IP
 - Pinged the DC from the client VM and confirmed successful connectivity
 
-![Client VM set to Internal Network](assets/client-internal-network.png)
+![Client VM set to Internal Network](assets/internal-adapter.png)
 
 *Client Adapter 1 set to Internal Network*
 
-![Successful ping to Domain Controller](assets/ping-dc-success.png)
+![Successful ping to Domain Controller](assets/internal-ping.png)
 
 *Client VM successfully pinging the Domain Controller over Internal Network*
 
