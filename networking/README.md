@@ -32,11 +32,12 @@ The purpose of this lab is to practice core networking concepts using VirtualBox
 - Attempted to ping the host machine's IP address from the client VM
 
 ![VirtualBox network adapter set to Bridged mode](assets/bridged-adapter.png)
-
+*Adapter 1 set to Bridged — VM connects directly through the host's physical network adapter and receives an IP on the real home network*
 
 ![ipconfig and ping results in Bridged mode](assets/bridged-pinged.png)
+*Bridged mode confirmed working — IPv4 address from Host Machine, successful ping to 8.8.8.8 and host machine with 0% packet loss*
 
-*Adapter 1 set to Bridged — VM connects directly through the host's physical network adapter and receives an IP on the real home network*
+
 
 ### 3. Tested Internal Network Mode
 - Changed Client 1 Adapter 1 from Host-Only to **Internal Network** to match the Domain Controller's internal adapter
