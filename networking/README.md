@@ -176,9 +176,27 @@ rather than guessing.
 
 ## Issues & Troubleshooting
 
-- **Ping to host machine timing out in Bridged mode** — Windows Defender Firewall on the host blocks incoming ICMP echo requests by default. Fix: enabled the "File and Printer Sharing (ICMPv4-In)" inbound rule in Windows Defender Firewall Advanced Settings
+- **Ping to host machine timing out in Bridged mode**
+  — Windows Defender Firewall on the host blocks 
+  incoming ICMP echo requests by default. Fix: enabled 
+  the "File and Printer Sharing (ICMPv4-In)" inbound 
+  rule in Windows Defender Firewall Advanced Settings
 
-- **Client VM unable to ping Domain Controller** — caused by a network mode mismatch. The client VM was set to Host-Only Adapter while the Domain Controller's internal adapter was set to Internal Network. These are two different VirtualBox modes and cannot communicate with each other even though both sound "internal." Fix: changed the client VM to Internal Network and confirmed both VMs were using the same network name, which resolved the connectivity issue
+- **Client VM unable to ping Domain Controller** 
+  — caused by a network mode mismatch. The client VM 
+  was set to Host-Only Adapter while the Domain 
+  Controller's internal adapter was set to Internal 
+  Network. These are two different VirtualBox modes 
+  and cannot communicate with each other even though 
+  both sound "internal." Fix: changed the client VM 
+  to Internal Network and confirmed both VMs were 
+  using the same network name, which resolved the 
+  connectivity issue
+
+- **ipconfig /release failed with "address not yet 
+  associated" error** — appeared to be a temporary 
+  network stack glitch on the client VM. Resolved 
+  after restarting the VM
 
 ## What I Learned
 
