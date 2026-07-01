@@ -54,7 +54,87 @@ The purpose of this lab is to practice core networking concepts using VirtualBox
 *Client VM successfully pinging the Domain Controller over Internal Network*
 
 ### 4. Practiced Core Commands
-*(In progress — to be added)*
+
+**IP Configuration**
+- Ran `ipconfig` to view basic network configuration —
+  confirmed IPv4 address 10.0.2.15, subnet mask 
+  255.255.255.0, and default gateway 10.0.2.2
+- Ran `ipconfig /all` to view detailed configuration —
+  confirmed DHCP is enabled, viewed MAC address, 
+  lease obtained and expiration dates, and DNS servers
+
+![ipconfig and ipconfig /all output](assets/cmd-ipconfig.png)
+
+*Basic and detailed IP configuration showing DHCP 
+assigned address, MAC address, and lease information*
+
+**DHCP Release and Renew**
+- Ran `ipconfig /release` to release the current 
+  IP lease — IPv4 address was dropped successfully
+- Ran `ipconfig /renew` to request a new IP from 
+  the DHCP server — IPv4 address 10.0.2.15 was 
+  reassigned
+- Confirmed new assignment with a final `ipconfig`
+
+![IP release and renew sequence](assets/cmd-ipconfig-release-renew.png)
+
+*Releasing and renewing the client IP address — 
+the most common fix for DHCP related connectivity 
+issues at the help desk*
+
+**Connectivity and DNS Testing**
+- Ran `ping 8.8.8.8` — succeeded with 0% packet loss,
+  confirming internet connectivity
+- Ran `ping google.com` — resolved to 142.251.41.78 
+  and succeeded with 0% packet loss, confirming 
+  both connectivity and DNS resolution
+- Ran `nslookup google.com` — confirmed DNS resolution
+  through the domain's DNS server, returning 
+  google.com.mydomain.com — the domain suffix 
+  mydomain.com was appended because the client VM 
+  is domain joined and has a DNS suffix search list 
+  configured
+
+![Ping and nslookup results](assets/connective-and-dns-testing.png)
+
+*Testing internet connectivity and DNS resolution — 
+if ping 8.8.8.8 succeeds but ping google.com fails, 
+the issue is DNS not connectivity*
+
+**Network Path Tracing**
+- Ran `tracert 8.8.8.8` to trace the path packets 
+  take to the destination
+- Trace completed in a single hop — expected behavior
+  in VirtualBox NAT mode since the NAT engine handles
+  routing internally rather than exposing real 
+  internet hops
+
+![tracert output](assets/cmd-tracert.png)
+
+*Tracing the route to 8.8.8.8 — single hop is 
+expected in NAT mode*
+
+**Active Connections**
+- Ran `netstat` to view active TCP connections on 
+  the client VM
+- Observed a mix of TIME_WAIT and ESTABLISHED 
+  connection states to various external addresses
+
+![netstat output](assets/active-connections.png)
+
+*Active network connections showing TIME_WAIT and 
+ESTABLISHED TCP connection states*
+
+**DNS Cache Flush**
+- Ran `ipconfig /flushdns` to clear the local DNS 
+  resolver cache
+- Successfully flushed — useful when a user cannot 
+  reach a site that others on the same network can 
+  access fine
+
+![ipconfig /flushdns output](assets/cmd-flushdns.png)
+
+*DNS resolver cache successfully flushed*
 
 ### 5. Simulated Troubleshooting Scenario
 *(In progress — to be added)*
