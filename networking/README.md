@@ -137,7 +137,42 @@ ESTABLISHED TCP connection states*
 *DNS resolver cache successfully flushed*
 
 ### 5. Simulated Troubleshooting Scenario
-*(In progress — to be added)*
+
+**Scenario:** A user calls in reporting they cannot 
+connect to the internet. The following steps 
+demonstrate a systematic approach to diagnosing 
+and isolating the issue.
+
+1. Ran `ipconfig` — confirmed a valid DHCP assigned 
+   IP (10.0.2.15), ruling out a DHCP failure
+2. Ran `ping 10.0.2.2` — gateway responded with 0% 
+   packet loss, ruling out a local network issue
+3. Ran `ping 8.8.8.8` — succeeded, confirming 
+   internet connectivity was working
+4. Ran `nslookup google.com` — DNS resolved 
+   successfully, ruling out a DNS issue
+5. Ran `ipconfig /release` and `ipconfig /renew` — 
+   simulated the most common DHCP fix, IP 
+   successfully reassigned
+6. Ran `ipconfig /flushdns` — cleared DNS cache to 
+   resolve any stale entries causing site-specific 
+   failures
+
+![Gateway ping, internet ping, and nslookup results]
+(assets/check-pings.png)
+
+*Systematic connectivity check — gateway, internet, 
+and DNS all confirmed working*
+
+![IP release and renew sequence](assets/release-and-renew-ip.png)
+
+*IP successfully reassigned after release and renew*
+
+**Outcome:** Each command progressively narrowed down 
+where the problem could exist — local network, 
+internet connectivity, or DNS. This sequence 
+confirms or rules out each layer systematically 
+rather than guessing.
 
 ## Issues & Troubleshooting
 
