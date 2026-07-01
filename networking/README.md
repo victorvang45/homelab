@@ -200,14 +200,84 @@ rather than guessing.
 
 ## What I Learned
 
-- NAT mode routes a VM's traffic through the host machine using a private internal IP (10.0.2.x range) — the VM can reach the internet but is isolated from other devices, similar to how a company router performs NAT translation between internal private IPs and a single public IP
+- NAT mode routes a VM's traffic through the host 
+  machine using a private internal IP (10.0.2.x 
+  range) — the VM can reach the internet but is 
+  isolated from other devices, similar to how a 
+  company router performs NAT translation between 
+  internal private IPs and a single public IP
 
-- Bridged mode connects a VM directly to the physical network, giving it an IP on the same network as the host machine — useful for simulating a device that behaves like a real physical machine on the network
+- Bridged mode connects a VM directly to the physical 
+  network, giving it an IP on the same network as the 
+  host machine — useful for simulating a device that 
+  behaves like a real physical machine on the network
 
-- Host-Only Adapter and Internal Network are both "private" modes but are not interchangeable — Host-Only allows the host machine to communicate with VMs, while Internal Network isolates VMs from the host entirely and only allows VM-to-VM communication
+- Host-Only Adapter and Internal Network are both 
+  private modes but are not interchangeable — 
+  Host-Only allows the host machine to communicate 
+  with VMs, while Internal Network isolates VMs from 
+  the host entirely and only allows VM-to-VM 
+  communication
 
-- A VM can have multiple network adapters active at once for different purposes — for example, one adapter for internet access and a separate adapter for isolated internal network communication
+- A VM can have multiple network adapters active at 
+  once for different purposes — one adapter for 
+  internet access and a separate adapter for isolated 
+  internal network communication
 
-- The Adapter Type shown in VirtualBox network settings (e.g. Intel PRO/1000 MT Desktop) represents emulated virtual hardware and stays consistent across modes — what changes is how that virtual adapter connects to the network, not the adapter itself
+- The Adapter Type in VirtualBox represents emulated 
+  virtual hardware and stays consistent across modes 
+  — what changes is how that virtual adapter connects 
+  to the network, not the adapter itself
 
-- Diagnosing a connectivity failure between two VMs requires checking the actual "Attached to" mode for each adapter rather than relying on adapter names, since adapters can be renamed in ways that don't reflect their actual configuration
+- Diagnosing a connectivity failure between two VMs 
+  requires checking the actual mode each adapter is 
+  set to rather than relying on adapter names, since 
+  adapters can be renamed in ways that don't reflect 
+  their actual configuration
+
+- `ipconfig` shows a machine's current network 
+  identity — IP address, subnet mask, default 
+  gateway, and DNS server. The first step in any 
+  connectivity troubleshooting
+
+- `ipconfig /all` adds deeper detail including MAC 
+  address, DHCP status, and lease dates — useful for 
+  confirming whether a machine is getting its IP 
+  automatically from DHCP or has it set manually
+
+- `ipconfig /release` and `/renew` forces the machine 
+  to give up its current IP and request a fresh one 
+  from the DHCP server — the most common fix for 
+  DHCP related connectivity issues
+
+- `ping 8.8.8.8` tests raw internet connectivity 
+  without involving DNS — if this succeeds but 
+  websites won't load, the problem is DNS not the 
+  internet connection itself
+
+- `ping google.com` combined with `nslookup` tests 
+  both internet connectivity and DNS resolution 
+  together — nslookup directly queries the DNS server 
+  and returns more detail than ping alone
+
+- `tracert` traces the path packets take to reach a 
+  destination hop by hop — useful for identifying 
+  where a connection breaks down on the way to a 
+  target. In NAT mode only one hop shows because 
+  VirtualBox handles routing internally
+
+- `netstat` displays all active TCP connections on 
+  the machine — useful for seeing what a machine is 
+  currently communicating with or spotting unusual 
+  connections
+
+- `ipconfig /flushdns` clears the machine's cached 
+  DNS records — fixes situations where a site has 
+  moved to a new IP but the machine still remembers 
+  the old address, causing site-specific failures 
+  even when general connectivity is working
+
+- Troubleshooting connectivity issues systematically 
+  means ruling out one layer at a time — local 
+  network first, then internet connectivity, then 
+  DNS — rather than guessing randomly at the cause
